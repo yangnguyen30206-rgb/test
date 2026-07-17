@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
+
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    color: #2c2520;
+    background-color: #faf6f0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #c85a17;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+    color: #3b6b50;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #2c2520;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* Clearfix utility for float layouts */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================================================
+   2. SITE CONTAINER LAYOUT (Box Model: width, max-width, min-width, margin)
+   ========================================================================== */
+.container {
+    width: 95%;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #e8decb;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(44, 37, 32, 0.04);
+    padding: 30px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION (display: inline / float layout)
+   ========================================================================== */
+header {
+    border-bottom: 2px solid #faf6f0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    float: left;
+    width: 150px;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+header nav {
+    float: right;
+    margin-top: 40px; /* Vertically align navigation with logo center */
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #5a4f47;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #c85a17;
+    border-bottom-color: #c85a17;
+}
+
+/* ==========================================================================
+   4. TWO-COLUMN MAIN CONTENT & SIDEBAR LAYOUT
+   ========================================================================== */
+.main-wrapper {
+    margin-bottom: 30px;
+}
+
+main {
+    float: left;
+    width: 66%;
+    padding-right: 4%;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    background-color: #faf6f0;
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   5. HOME PAGE STYLES (Trang Chủ)
+   ========================================================================== */
+.welcome-hero {
+    background-color: #f5eee6;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 5px solid #c85a17;
+}
+
+.welcome-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #2c2520;
+}
+
+.welcome-hero p {
+    font-size: 1.1rem;
+    color: #5a4f47;
+    font-style: italic;
+}
+
+/* Recipe grid/cards */
+.recipe-summary-card {
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #e8decb;
+    padding-bottom: 30px;
+}
+
+.recipe-summary-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.recipe-summary-card hgroup {
+    margin-bottom: 15px;
+}
+
+.recipe-summary-card hgroup h2 {
+    font-size: 1.6rem;
+    color: #2c2520;
+    margin-bottom: 5px;
+}
+
+.recipe-summary-card hgroup h3 {
+    font-size: 1rem;
+    color: #8c7a6b;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.recipe-card-thumb {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.recipe-card-thumb img {
+    border-radius: 6px;
+    border: 1px solid #e8decb;
+}
+
+.recipe-card-excerpt {
+    float: left;
+    width: calc(100% - 220px);
+}
+
+.recipe-card-excerpt p {
+    margin-bottom: 15px;
+    color: #5a4f47;
+}
+
+.btn-readmore {
+    display: inline-block;
+    background-color: #3b6b50;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-readmore:hover {
+    background-color: #2e543e;
+    color: #ffffff;
+}
+
+/* Sidebar elements */
+.author-profile {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.author-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(44, 37, 32, 0.1);
+    background-color: #c85a17;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 84px;
+    font-weight: bold;
+}
+
+.author-profile h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.author-profile p {
+    font-size: 0.85rem;
+    color: #6d5e53;
+}
+
+.sidebar-section {
+    margin-bottom: 25px;
+}
+
+.sidebar-section h4 {
+    border-bottom: 2px solid #e8decb;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.map-wrapper {
+    position: relative;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #e8decb;
+}
+
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   6. RECIPE DETAIL PAGE STYLES (recipe.html)
+   ========================================================================== */
+.recipe-hero-section {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.recipe-hero-section h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.recipe-meta-bar {
+    background-color: #faf6f0;
+    border: 1px solid #e8decb;
+    border-radius: 6px;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    color: #5a4f47;
+}
+
+.recipe-meta-item {
+    float: left;
+    margin-right: 30px;
+}
+
+.recipe-meta-item strong {
+    color: #2c2520;
+}
+
+/* Definition tags (<dfn>, <abbr>, blockquote) */
+dfn {
+    font-style: italic;
+    font-weight: 600;
+    color: #3b6b50;
+    background-color: #f1f7f4;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+abbr {
+    text-decoration: underline dotted;
+    cursor: help;
+    font-weight: 600;
+}
+
+blockquote {
+    background-color: #fdf5f0;
+    border-left: 4px solid #c85a17;
+    margin: 25px 0;
+    padding: 15px 25px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #4a3e35;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: #8c7a6b;
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* Lists styling with custom bullets */
+.recipe-lists-wrapper {
+    margin-bottom: 35px;
+}
+
+.ingredients-box {
+    float: left;
+    width: 48%;
+    background-color: #faf6f0;
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.instructions-box {
+    float: right;
+    width: 48%;
+    background-color: #ffffff;
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.recipe-lists-wrapper h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e8decb;
+    padding-bottom: 8px;
+}
+
+.ingredients-box ul {
+    list-style-image: url('assets/custom-bullet.png');
+    padding-left: 20px;
+}
+
+.ingredients-box ul li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.instructions-box ol {
+    padding-left: 20px;
+}
+
+.instructions-box ol li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+/* Media styling (<figure>, <figcaption>) */
+.media-section {
+    margin: 35px 0;
+    background-color: #faf6f0;
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.media-section h3 {
+    margin-bottom: 15px;
+}
+
+.media-container {
+    margin-bottom: 20px;
+}
+
+.video-wrapper {
+    float: left;
+    width: 60%;
+}
+
+.video-wrapper video {
+    width: 100%;
+    border: 1px solid #e8decb;
+}
+
+.audio-wrapper {
+    float: right;
+    width: 36%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e8decb;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 40px; /* align with video center */
+}
+
+.audio-wrapper p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.audio-wrapper audio {
+    width: 100%;
+}
+
+figure figcaption {
+    font-size: 0.85rem;
+    color: #6d5e53;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    clear: both;
+}
+
+/* Nutrition Table styling (colspan, rowspan, zebra-striping) */
+.nutrition-section {
+    margin: 35px 0;
+}
+
+.nutrition-section h3 {
+    margin-bottom: 15px;
+}
+
+table.nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(44, 37, 32, 0.02);
+}
+
+table.nutrition-table th, 
+table.nutrition-table td {
+    padding: 12px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e8decb;
+    font-size: 0.9rem;
+}
+
+table.nutrition-table thead tr {
+    background-color: #3b6b50;
+    color: #ffffff;
+}
+
+table.nutrition-table thead th {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+table.nutrition-table tbody tr:nth-child(even) {
+    background-color: #faf6f0;
+}
+
+table.nutrition-table tbody tr:hover {
+    background-color: #f5eee6;
+}
+
+table.nutrition-table tfoot tr {
+    background-color: #f5eee6;
+    font-weight: 700;
+}
+
+table.nutrition-table td.text-center,
+table.nutrition-table th.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   7. FORM PAGES (submit.html - fieldset, alignment using float/width, interactive)
+   ========================================================================== */
+.form-intro {
+    margin-bottom: 25px;
+}
+
+.form-intro h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.form-intro p {
+    color: #5a4f47;
+}
+
+fieldset {
+    border: 1px solid #e8decb;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+legend {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c85a17;
+    padding: 0 12px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    clear: both;
+}
+
+/* CSS Form Label and Input Alignment using Float & Fixed Width */
+.form-group label.field-label {
+    display: block;
+    width: 200px;
+    float: left;
+    font-weight: 600;
+    color: #2c2520;
+    padding-top: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group .input-wrapper {
+    float: left;
+    width: calc(100% - 200px);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="url"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #c8bda9;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #2c2520;
+    outline: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* CSS Form Focus & Hover States */
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group input[type="url"]:hover,
+.form-group input[type="date"]:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #c85a17;
+    background-color: #ffffff;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #c85a17;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(200, 90, 23, 0.15);
+}
+
+/* Radio & Checkbox Styling */
+.choice-group {
+    display: inline-block;
+    margin-right: 20px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.choice-group input {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.choice-group span {
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.form-submit-container {
+    padding-top: 10px;
+    text-align: right;
+    clear: both;
+}
+
+button[type="submit"] {
+    background-color: #c85a17;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(200, 90, 23, 0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #a7480f;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   8. FOOTER & BACK TO TOP BUTTON
+   ========================================================================== */
+footer {
+    border-top: 2px solid #faf6f0;
+    padding-top: 25px;
+    margin-top: 40px;
+    text-align: center;
+    color: #8c7a6b;
+    font-size: 0.85rem;
+    clear: both;
+}
+
+.footer-nav {
+    margin-bottom: 15px;
+}
+
+.footer-nav a {
+    color: #5a4f47;
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    color: #c85a17;
+}
+
+.back-to-top-wrapper {
+    margin-bottom: 15px;
+}
+
+.back-to-top {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8c7a6b;
+    background-color: #faf6f0;
+    border: 1px solid #e8decb;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+    color: #c85a17;
+    background-color: #f5eee6;
+    border-color: #c85a17;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES (Mobile-friendly layout adjustments)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    .logo-container {
+        float: none;
+        margin: 0 auto 15px;
+    }
+
+    header nav {
+        float: none;
+        margin-top: 15px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    main {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    aside {
+        float: none;
+        width: 100%;
+    }
+
+    .recipe-card-thumb {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .recipe-card-thumb img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .recipe-card-excerpt {
+        float: none;
+        width: 100%;
+    }
+
+    .ingredients-box, 
+    .instructions-box {
+        float: none;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .video-wrapper,
+    .audio-wrapper {
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .form-group label.field-label {
+        float: none;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .form-group .input-wrapper {
+        float: none;
+        width: 100%;
+    }
+}

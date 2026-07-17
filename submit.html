@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đóng Góp Công Thức & Review Sách - Taste & Tale</title>
+    <meta name="description" content="Chia sẻ công thức nấu ăn gia truyền hoặc gửi đánh giá sách ẩm thực của bạn đến với cộng đồng người yêu bếp tại Taste & Tale.">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- HTML5 shiv/shim để hỗ trợ các thẻ HTML5 cho trình duyệt Internet Explorer cũ (trước IE9) -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body id="top">
+
+    <div class="container">
+        
+        <!-- HEADER LAYOUT -->
+        <header class="clearfix">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Taste & Tale Logo">
+                </a>
+            </div>
+            
+            <!-- NAV LAYOUT -->
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="recipe.html">Chi Tiết Công Thức</a></li>
+                    <li><a href="submit.html" class="active">Đóng Góp & Review</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN FORM CONTENT -->
+        <div class="main-wrapper clearfix">
+            
+            <!-- main tag -->
+            <main style="float: none; width: 100%; padding-right: 0;">
+                
+                <section class="form-intro">
+                    <h1>Đóng Góp Cho Taste & Tale</h1>
+                    <p>
+                        Bạn có công thức nấu ăn đặc sắc muốn chia sẻ, hay vừa đọc xong một cuốn sách ẩm thực thú vị? Hãy gửi ngay cho chúng tôi thông qua biểu mẫu dưới đây nhé! Bài viết của bạn sẽ được biên tập và xuất bản lên blog sau khi được kiểm duyệt.
+                    </p>
+                </section>
+
+                <!-- FORM SECTION -->
+                <!-- action="https://httpbin.org/post" giúp demo việc POST dữ liệu lên server hoạt động 100% -->
+                <form action="https://httpbin.org/post" method="POST">
+                    
+                    <fieldset>
+                        <legend>Biểu Mẫu Gửi Bài Viết</legend>
+
+                        <!-- Tên đóng góp (Text Input) -->
+                        <div class="form-group clearfix">
+                            <label for="fullname" class="field-label">Họ và Tên:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn..." required>
+                            </div>
+                        </div>
+
+                        <!-- Email (HTML5 Email input with validation) -->
+                        <div class="form-group clearfix">
+                            <label for="email" class="field-label">Địa Chỉ Email:</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" name="email" placeholder="vi_du@email.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Blog URL (HTML5 URL input with validation) -->
+                        <div class="form-group clearfix">
+                            <label for="website" class="field-label">Liên Kết Cá Nhân:</label>
+                            <div class="input-wrapper">
+                                <input type="url" id="website" name="website" placeholder="https://trangwebcuaban.com (nếu có)">
+                            </div>
+                        </div>
+
+                        <!-- Date (HTML5 Date input with validation) -->
+                        <div class="form-group clearfix">
+                            <label for="post-date" class="field-label">Ngày Đóng Góp:</label>
+                            <div class="input-wrapper">
+                                <input type="date" id="post-date" name="post_date" required>
+                            </div>
+                        </div>
+
+                        <!-- Select Option (Recipe / Book Review category) -->
+                        <div class="form-group clearfix">
+                            <label for="category" class="field-label">Chuyên Mục:</label>
+                            <div class="input-wrapper">
+                                <select id="category" name="category">
+                                    <option value="recipe-soup">Công Thức - Món Nước (Phở, Bún, Hủ Tiếu...)</option>
+                                    <option value="recipe-dry">Công Thức - Cơm / Bánh Mì / Món Khô</option>
+                                    <option value="recipe-dessert">Công Thức - Món Tráng Miệng</option>
+                                    <option value="book-review">Đánh Giá / Review Sách Ẩm Thực</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Radio Buttons (Rating stars - same name attribute) -->
+                        <div class="form-group clearfix">
+                            <label class="field-label">Đánh Giá Công Thức/Sách:</label>
+                            <div class="input-wrapper">
+                                <label class="choice-group">
+                                    <input type="radio" name="rating" value="1">
+                                    <span>1 ⭐</span>
+                                </label>
+                                <label class="choice-group">
+                                    <input type="radio" name="rating" value="2">
+                                    <span>2 ⭐</span>
+                                </label>
+                                <label class="choice-group">
+                                    <input type="radio" name="rating" value="3">
+                                    <span>3 ⭐</span>
+                                </label>
+                                <label class="choice-group">
+                                    <input type="radio" name="rating" value="4">
+                                    <span>4 ⭐</span>
+                                </label>
+                                <label class="choice-group">
+                                    <input type="radio" name="rating" value="5" checked>
+                                    <span>5 ⭐ (Xuất sắc)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox (Newsletter subscription) -->
+                        <div class="form-group clearfix">
+                            <label class="field-label">Đăng Ký Bản Tin:</label>
+                            <div class="input-wrapper">
+                                <label class="choice-group">
+                                    <input type="checkbox" name="newsletter" value="subscribe" checked>
+                                    <span>Tôi muốn nhận email thông báo bài viết mới hàng tuần</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Textarea Content -->
+                        <div class="form-group clearfix">
+                            <label for="content" class="field-label">Chi Tiết Bài Viết:</label>
+                            <div class="input-wrapper">
+                                <textarea id="content" name="content" rows="8" placeholder="Nhập công thức chi tiết (Nguyên liệu, các bước làm) hoặc nội dung review sách ẩm thực của bạn..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-submit-container">
+                            <button type="submit">Gửi Bài Đóng Góp</button>
+                        </div>
+
+                    </fieldset>
+                    
+                </form>
+                
+            </main>
+            
+        </div>
+
+        <!-- FOOTER LAYOUT -->
+        <footer class="clearfix">
+            <!-- Back to top feature -->
+            <div class="back-to-top-wrapper">
+                <a href="#top" class="back-to-top">↑ Lên Đầu Trang</a>
+            </div>
+
+            <!-- Footer navigation -->
+            <div class="footer-nav">
+                <a href="index.html">Trang Chủ</a> | 
+                <a href="recipe.html">Chi Tiết Công Thức</a> | 
+                <a href="submit.html">Đóng Góp & Review</a>
+            </div>
+
+            <!-- Absolute links (at least 3 external links opening in new tab) -->
+            <p style="font-size: 0.8rem; margin-bottom: 10px;">
+                Tài liệu tham khảo thêm về Ẩm thực Việt Nam: 
+                <a href="https://vi.wikipedia.org/wiki/Ph%E1%BB%9F" target="_blank" rel="noopener noreferrer">Wikipedia về Phở</a> | 
+                <a href="https://vi.wikipedia.org/wiki/B%C3%A1nh_m%C3%AC_Vi%E1%BB%87t_Nam" target="_blank" rel="noopener noreferrer">Wikipedia về Bánh Mì</a> | 
+                <a href="https://www.vietnamtourism.gov.vn" target="_blank" rel="noopener noreferrer">Tổng cục Du lịch Việt Nam</a>
+            </p>
+
+            <!-- mailto: link -->
+            <p style="font-size: 0.85rem; margin-bottom: 15px;">
+                Mọi thắc mắc hoặc đặt bàn, vui lòng gửi email về: 
+                <a href="mailto:contact@tastetale.com?subject=Lien%20he%20Taste%20Tale">contact@tastetale.com</a>
+            </p>
+
+            <p>&copy; 2026 Taste & Tale - Được thiết kế bởi Antigravity. Tất cả các quyền được bảo lưu.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
